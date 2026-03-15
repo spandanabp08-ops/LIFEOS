@@ -1,0 +1,99 @@
+/* Base styles */
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* Header */
+header {
+  background: #4b7bec;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Card layout */
+.card {
+  background: #fff;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  max-width: 900px;
+}
+
+/* Inputs, textareas, buttons */
+input, textarea, select, button {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+/* Buttons */
+button {
+  background: #3867d6;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #4b7bec;
+}
+
+/* To-Do List */
+ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 4px;
+}
+
+/* Canvas charts */
+canvas {
+  max-width: 100%;
+  margin: 20px 0;
+}
+
+/* Login card */
+.login-card {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.login-card h1 {
+  margin-bottom: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card {
+    margin: 10px;
+    padding: 15px;
+  }
+  input, textarea, select, button {
+    font-size: 13px;
+  }
+}
