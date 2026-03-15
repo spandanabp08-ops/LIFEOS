@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LifeOS - Home</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-storage.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<header>
+  <h1>LifeOS - Home</h1>
+</header>
+
+<main>
+  <!-- Date Filter Section -->
+  <section class="card">
+    <h2>Filter Tracker Data</h2>
+    <label>Start Date: <input type="date" id="filterStart"></label>
+    <label>End Date: <input type="date" id="filterEnd"></label>
+    <label>Quick Filter:
+      <select id="timeFilter">
+        <option value="daily">Today</option>
+        <option value="weekly">This Week</option>
+        <option value="monthly">This Month</option>
+        <option value="halfyearly">Last 6 Months</option>
+        <option value="yearly">This Year</option>
+      </select>
+    </label>
+    <button onclick="applyChartFilter()">Apply Filter</button>
+  </section>
+
+  <!-- Daily Planner Section -->
+  <section class="card">
+    <h2>Daily Planner</h2>
+    <textarea id="todaysGoals" placeholder="Today's Goals"></textarea>
+    
+    <h3>To-Do List</h3>
+    <ul id="todoList"></ul>
+    <input id="newTodo" placeholder="Add a To-Do"><button onclick="addTodo()">Add To-Do</button>
+
+    <h3>Habits</h3>
+    <label><input type="checkbox" id="habitWorkout"> Workout</label>
+    <label><input type="checkbox" id="habitSkincare"> Skincare</label>
+    <label><input type="checkbox" id="habitHaircare"> Haircare</label>
+
+    <h3>Food Diary</h3>
+    <textarea id="foodDiary"></textarea>
+
+    <h3>Exercise</h3>
+    <input type="number" id="exerciseMinutes" placeholder="Minutes">
+    <input type="number" id="exerciseSteps" placeholder="Steps">
+
+    <h3>Mood & Water</h3>
+    <input type="text" id="mood" placeholder="Mood">
+    <input type="number" id="waterIntake" placeholder="Water Intake (ml)">
+
+    <h3>Sleep & Gratitude</h3>
+    <input type="number" id="sleepHours" placeholder="Sleep Hours">
+    <textarea id="gratitude" placeholder="I'm grateful for..."></textarea>
+
+    <h3>Glow-Up</h3>
+    <label><input type="checkbox" id="glowWorkout"> Workout</label>
+    <label><input type="checkbox" id="glowSkincare"> Skincare</label>
+    <label><input type="checkbox" id="glowHaircare"> Haircare</label>
+  </section>
+
+  <!-- Photo Timeline -->
+  <section class="card">
+    <h2>Photo Timeline</h2>
+    <input type="file" id="photoUpload">
+    <input type="text" id="photoCategory" placeholder="Category">
+    <input type="text" id="photoNotes" placeholder="Notes">
+    <button onclick="uploadPhoto()">Upload Photo</button>
+    <div id="photoTimeline"></div>
+  </section>
+
+  <!-- Tracker Charts -->
+  <section class="card">
+    <h2>Tracker Charts</h2>
+    <canvas id="dailyStepsChart"></canvas>
+    <canvas id="dailyWaterChart"></canvas>
+    <canvas id="dailySleepChart"></canvas>
+    <canvas id="dailyExerciseChart"></canvas>
+    <canvas id="dailyScreenChart"></canvas>
+    <canvas id="dailySocialChart"></canvas>
+    <canvas id="dailyReadingChart"></canvas>
+    <canvas id="dailySkillsChart"></canvas>
+    <canvas id="dailyGlowupChart"></canvas>
+    <canvas id="dailySunlightChart"></canvas>
+  </section>
+</main>
+
+<!-- Firebase Initialization -->
+<script>
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY_HERE",
+  authDomain: "YOUR_AUTH_DOMAIN_HERE",
+  projectId: "YOUR_PROJECT_ID_HERE",
+  storageBucket: "YOUR_STORAGE_BUCKET_HERE",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID_HERE"
+};
+firebase.initializeApp(firebaseConfig);
+</script>
+
+<script src="assets/js/auth.js"></script>
+<script src="assets/js/dailyPlanner.js"></script>
+<script src="assets/js/trackers.js"></script>
+<script src="assets/js/photoGallery.js"></script>
+<script src="assets/js/charts.js"></script>
+</body>
+</html>
